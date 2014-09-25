@@ -4,7 +4,7 @@ require 'pry-doc'
 require 'pry-git'
 require 'pry-remote'
 require 'pry-stack_explorer'
-require 'awesome_print'
+#require 'awesome_print'
 require 'jazz_hands/hirb_ext'
 
 
@@ -17,11 +17,11 @@ module JazzHands
 
         # Use awesome_print for output, but keep pry's pager. If Hirb is
         # enabled, try printing with it first.
-        Pry.config.print = ->(output, value) do
-          return if JazzHands._hirb_output && Hirb::View.view_or_page_output(value)
-          pretty = value.ai(indent: 2)
-          Pry::Helpers::BaseHelpers.stagger_output("=> #{pretty}", output)
-        end
+        #Pry.config.print = ->(output, value) do
+        #  return if JazzHands._hirb_output && Hirb::View.view_or_page_output(value)
+        #  pretty = value.ai(indent: 2)
+        #  Pry::Helpers::BaseHelpers.stagger_output("=> #{pretty}", output)
+        #end
 
         # Friendlier prompt - line number, app name, nesting levels look like
         # directory paths.
